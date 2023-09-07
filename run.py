@@ -18,6 +18,12 @@ volume = modal.NetworkFileSystem.new().persisted("test")
         pip install -q torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 torchtext==0.15.2 torchdata==0.6.1 --extra-index-url https://download.pytorch.org/whl/cu118 && \
         pip install -q xformers==0.0.20 triton==2.0.0 packaging==23.1"
     )
+    .pip_install_private_repos(
+        "github.com/CompVis/taming-transformers.git#egg=taming-transformers",
+        "github.com/NVlabs/nvdiffrast"
+        "github.com/openai/CLIP"
+        "github.com/facebookresearch/segment-anything",
+    )
     .pip_install_from_requirements(
         "requirements.txt"
     ),
