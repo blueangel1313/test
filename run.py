@@ -15,8 +15,7 @@ volume = modal.NetworkFileSystem.new().persisted("test")
         apt install -y git git-lfs && \
         git --version  && \
         apt install -y aria2 libgl1 libglib2.0-0 wget libsparsehash-dev build-essential clang && \
-        pip install -q torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 torchtext==0.15.2 torchdata==0.6.1 --extra-index-url https://download.pytorch.org/whl/cu118 && \
-        pip install -q xformers==0.0.20 triton==2.0.0 packaging==23.1"
+        pip install -q torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 torchtext==0.15.2 torchdata==0.6.1 --extra-index-url https://download.pytorch.org/whl/cu118"
     )
     .pip_install_from_requirements(
         "requirements.txt"
