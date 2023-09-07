@@ -22,7 +22,7 @@ diffusers>=0.12.1
 datasets[vision]>=2.4.0
 rich>=13.3.2
 plotly>=5.13.1
--e git+https://github.com/CompVis/taming-transformers.git#egg=taming-transformers
+# -e git+https://github.com/CompVis/taming-transformers.git#egg=taming-transformers
 # elev est
 dl_ext
 loguru
@@ -39,12 +39,12 @@ transforms3d
 trimesh
 yacs
 gdown
-git+https://github.com/NVlabs/nvdiffrast.git
-git+https://github.com/openai/CLIP.git
+# git+https://github.com/NVlabs/nvdiffrast.git
+# git+https://github.com/openai/CLIP.git
 # segment anything
 onnxruntime 
 onnx
-git+https://github.com/facebookresearch/segment-anything.git
+# git+https://github.com/facebookresearch/segment-anything.git
 # rembg
 rembg
 # sparseneus
