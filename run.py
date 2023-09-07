@@ -19,10 +19,10 @@ volume = modal.NetworkFileSystem.new().persisted("test")
         pip install -q xformers==0.0.20 triton==2.0.0 packaging==23.1"
     )
     .pip_install(
-        "github.com/CompVis/taming-transformers.git#egg=taming-transformers",
-        "github.com/NVlabs/nvdiffrast"
-        "github.com/openai/CLIP"
-        "github.com/facebookresearch/segment-anything",
+        "git+https://github.com/CompVis/taming-transformers.git#egg=taming-transformers",
+        "git+https://github.com/NVlabs/nvdiffrast",
+        "git+https://github.com/openai/CLIP",
+        "git+https://github.com/facebookresearch/segment-anything",
     )
     .pip_install_from_requirements(
         "requirements.txt"
