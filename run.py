@@ -6,9 +6,6 @@ volume = modal.NetworkFileSystem.new().persisted("test")
 
 @stub.function(
     modal.Image.from_registry("nvidia/cuda:12.2.0-base-ubuntu22.04", add_python="3.11")
-    .pip_install_from_requirements(
-        "requirements.txt"
-    )
     .run_commands(
         "apt update -y && \
         apt install -y software-properties-common && \
@@ -20,6 +17,9 @@ volume = modal.NetworkFileSystem.new().persisted("test")
         apt install -y aria2 libgl1 libglib2.0-0 wget libsparsehash-dev && \
         pip install -q torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2+cu118 torchtext==0.15.2 torchdata==0.6.1 --extra-index-url https://download.pytorch.org/whl/cu118 && \
         pip install -q xformers==0.0.20 triton==2.0.0 packaging==23.1"
+    )
+    .pip_install_from_requirements(
+        "requirements.txt"
     ),
     network_file_systems={"/content/test": volume},
     gpu="A10G",
