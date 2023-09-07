@@ -33,6 +33,7 @@ volume = modal.NetworkFileSystem.new().persisted("test")
 async def run():
     os.system(f"git clone -b dev https://github.com/camenduru/One-2-3-45-hf /content/test")
     os.chdir(f"/content/test")
+    os.system(f"git pull")
     os.environ['HF_HOME'] = '/content/cache/huggingface'
     os.system(f"pip install taming-transformers-rom1504")
     os.system(f"python app.py")
