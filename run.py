@@ -36,9 +36,9 @@ async def run():
     # pip.main(['install', elev_est_dir])
     # export TORCH_CUDA_ARCH_LIST="7.0;7.2;8.0;8.6"
     # export IABN_FORCE_CUDA=1
-    os.environ["TORCH_CUDA_ARCH_LIST"] = "8.0;8.6"
-    os.environ["IABN_FORCE_CUDA"] = "1"
-    os.environ["FORCE_CUDA"] = "1"
+    # os.environ["TORCH_CUDA_ARCH_LIST"] = "8.0;8.6"
+    # os.environ["IABN_FORCE_CUDA"] = "1"
+    # os.environ["FORCE_CUDA"] = "1"
     # pip.main(["install", "inplace_abn"]) 
     # FORCE_CUDA=1 pip install --no-cache-dir git+https://github.com/mit-han-lab/torchsparse.git@v1.4.0
     # pip.main(["install", "--no-cache-dir", "git+https://github.com/mit-han-lab/torchsparse.git@v1.4.0"])
@@ -47,14 +47,13 @@ async def run():
     # os.system(f"!rm -rf /content/test")
     # os.system(f"git lfs install")
     # os.system(f"git clone -b dev https://github.com/camenduru/One-2-3-45-hf /content/test")
-    os.chdir(f"/content/test")
-    os.system(f"ls -al")
-    # os.system(f"pip install git+https://github.com/mit-han-lab/torchsparse.git@v1.4.0")
-    # os.system(f"pip install git+https://github.com/mit-han-lab/torchsparse@v1.4.0")
+    # os.chdir(f"/content/test")
+    # os.system(f"ls -al")
+    os.system(f"pip install git+https://github.com/mit-han-lab/torchsparse@v1.4.0")
     os.system(f"pip show torchsparse")
     # os.environ['HF_HOME'] = '/content/cache/huggingface'
     # os.system(f"python app.py")
 
 @stub.local_entrypoint()
 def main():
-    run.call()
+    run.remote()
