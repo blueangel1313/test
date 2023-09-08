@@ -25,15 +25,15 @@ volume = modal.NetworkFileSystem.new().persisted("test")
         "git+https://github.com/NVlabs/nvdiffrast",
         "git+https://github.com/openai/CLIP",
         "git+https://github.com/facebookresearch/segment-anything",
+        "https://github.com/camenduru/One-2-3-45/releases/download/colab/inplace_abn-1.1.0-cp310-cp310-linux_x86_64.whl",
+        "https://github.com/camenduru/One-2-3-45/releases/download/colab/torchsparse-1.4.0-cp310-cp310-linux_x86_64.whl",
+        "taming-transformers-rom1504",
     ),
     network_file_systems={"/content": volume},
     gpu="A10G",
     timeout=60000,
 )
 async def run():
-    os.system(f"pip install https://github.com/camenduru/One-2-3-45/releases/download/colab/inplace_abn-1.1.0-cp310-cp310-linux_x86_64.whl")
-    os.system(f"pip install https://github.com/camenduru/One-2-3-45/releases/download/colab/torchsparse-1.4.0-cp310-cp310-linux_x86_64.whl")
-    os.system(f"pip install taming-transformers-rom1504")
     os.environ['HF_HOME'] = '/content/cache/huggingface'
     os.system(f"git lfs install")
     os.system(f"git clone -b dev https://github.com/camenduru/One-2-3-45 /content/One-2-3-45")
