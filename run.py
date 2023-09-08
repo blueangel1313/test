@@ -45,7 +45,7 @@ async def run():
     os.system(f"git clone -b dev https://github.com/camenduru/One-2-3-45 /content/One-2-3-45")
     os.chdir(f"/content/One-2-3-45")
     os.system(f"git pull")
-    os.system(f"python run.py --img_path /content/One-2-3-45/demo/demo_examples/00_zero123_lysol.png")
+    os.system(f"python run.py --img_path /content/One-2-3-45/demo/demo_examples/00_zero123_lysol.png --half_precision")
     os.system(f"ls -la /content/One-2-3-45/exp/00_zero123_lysol/mesh.ply")
 
 @stub.local_entrypoint()
