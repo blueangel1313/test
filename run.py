@@ -37,13 +37,15 @@ async def run():
     # os.system(f"mkdir /content/wheel")
     # os.system(f"pip wheel inplace_abn -w /content/wheel")
     # os.system(f"ls -la /content/wheel")
+    os.system(f"pip install https://github.com/camenduru/One-2-3-45/releases/download/colab/inplace_abn-1.1.0-cp310-cp310-linux_x86_64.whl")
+    os.system(f"pip install https://github.com/camenduru/One-2-3-45/releases/download/colab/torchsparse-1.4.0-cp310-cp310-linux_x86_64.whl")
     os.system(f"pip install taming-transformers-rom1504")
     os.environ['HF_HOME'] = '/content/cache/huggingface'
     os.system(f"git lfs install")
     os.system(f"git clone -b dev https://github.com/camenduru/One-2-3-45 /content/One-2-3-45")
     os.chdir(f"/content/One-2-3-45")
     os.system(f"git pull")
-    os.system(f"python run.py --img_path /content/One-2-3-45/demo/demo_examples/00_zero123_lysol.png --half_precision")
+    os.system(f"python run.py --img_path /content/One-2-3-45/demo/demo_examples/00_zero123_lysol.png")
     os.system(f"ls -la /content/One-2-3-45/exp/00_zero123_lysol/mesh.ply")
 
 @stub.local_entrypoint()
