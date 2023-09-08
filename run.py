@@ -31,12 +31,6 @@ volume = modal.NetworkFileSystem.new().persisted("test")
     timeout=60000,
 )
 async def run():
-    # os.environ["TORCH_CUDA_ARCH_LIST"] = "7.5;8.0;8.6"
-    # os.environ["IABN_FORCE_CUDA"] = "1"
-    # os.environ["FORCE_CUDA"] = "1"
-    # os.system(f"mkdir /content/wheel")
-    # os.system(f"pip wheel inplace_abn -w /content/wheel")
-    # os.system(f"ls -la /content/wheel")
     os.system(f"pip install https://github.com/camenduru/One-2-3-45/releases/download/colab/inplace_abn-1.1.0-cp310-cp310-linux_x86_64.whl")
     os.system(f"pip install https://github.com/camenduru/One-2-3-45/releases/download/colab/torchsparse-1.4.0-cp310-cp310-linux_x86_64.whl")
     os.system(f"pip install taming-transformers-rom1504")
@@ -46,7 +40,7 @@ async def run():
     os.chdir(f"/content/One-2-3-45")
     os.system(f"git pull")
     os.system(f"python run.py --img_path /content/One-2-3-45/demo/demo_examples/00_zero123_lysol.png --half_precision")
-    os.system(f"ls -la /content/One-2-3-45/exp/00_zero123_lysol/mesh.ply")
+    os.system(f"ls -la /content/One-2-3-45/exp/00_zero123_lysol")
 
 @stub.local_entrypoint()
 def main():
