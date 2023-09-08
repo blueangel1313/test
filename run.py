@@ -31,6 +31,12 @@ volume = modal.NetworkFileSystem.new().persisted("test")
     timeout=60000,
 )
 async def run():
+    # os.environ["TORCH_CUDA_ARCH_LIST"] = "7.5;8.0;8.6"
+    # os.environ["IABN_FORCE_CUDA"] = "1"
+    # os.environ["FORCE_CUDA"] = "1"
+    # os.system(f"mkdir /content/wheel")
+    # os.system(f"pip wheel inplace_abn -w /content/wheel")
+    # os.system(f"ls -la /content/wheel")
     os.system(f"pip install taming-transformers-rom1504")
     os.environ['HF_HOME'] = '/content/cache/huggingface'
     os.system(f"git lfs install")
