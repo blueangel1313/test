@@ -31,7 +31,7 @@ volume = modal.NetworkFileSystem.new().persisted("test")
     timeout=60000,
 )
 async def run():
-    os.system(f"git clone https://huggingface.co/spaces/camenduru/One-2-3-45 /content/test")
+    os.system(f"git clone -b dev https://github.com/camenduru/One-2-3-45-hf /content/test")
     os.chdir(f"/content/test")
     os.system(f"git pull")
     os.environ['HF_HOME'] = '/content/cache/huggingface'
